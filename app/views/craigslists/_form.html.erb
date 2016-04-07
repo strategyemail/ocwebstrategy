@@ -1,0 +1,17 @@
+<%= form_for(@craigslist) do |f| %>
+  <% if @craigslist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@craigslist.errors.count, "error") %> prohibited this craigslist from being saved:</h2>
+
+      <ul>
+      <% @craigslist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

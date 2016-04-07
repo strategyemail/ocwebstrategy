@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Craigslists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @craigslists.each do |craigslist| %>
+      <tr>
+        <td><%= link_to 'Show', craigslist %></td>
+        <td><%= link_to 'Edit', edit_craigslist_path(craigslist) %></td>
+        <td><%= link_to 'Destroy', craigslist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Craigslist', new_craigslist_path %>
